@@ -1,4 +1,4 @@
-name: Main header
+name: Main header-2
 on:
   push:
     branches: [ "main" ]

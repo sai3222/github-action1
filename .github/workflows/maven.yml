@@ -10,7 +10,7 @@ jobs:
     #name: Save output1
     steps:
       - shell: bash
-        run: |
+        run: 
           expr 1 + 1 > output.log
       - name: Upload output file
         uses: actions/upload-artifact@v3

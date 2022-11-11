@@ -20,7 +20,11 @@ jobs:
           
   testing2:
     steps:
-      - name: Download a single artifact
-        uses: actions/download-artifact@v3
+      - shell: bash
+        run: |
+          expr 4 + 6 > output.log
+      - name: Upload output file
+        uses: actions/upload-artifact@v3
         with:
           name: output-log-file
+          path: output.log

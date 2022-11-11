@@ -5,7 +5,7 @@ on:
   pull_request:
     branches: [ "main" ]
 jobs:
-  example-job:
+  example-job1:
     runs-on: ubuntu-latest
     name: Save output1
     steps:
@@ -18,7 +18,8 @@ jobs:
           name: output-log-file
           path: output.log
           
-  testing2:
+  example-job2:
+    needs: [example-job1]
     runs-on: ubuntu-latest
     name: Save output2
     steps:

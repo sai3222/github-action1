@@ -11,12 +11,12 @@ jobs:
     steps:
       - shell: bash
         run: |
-          expr 1 + 1 > output.log
+          expr 1 + 1 > output.log1
       - name: Upload output file
         uses: actions/upload-artifact@v3
         with:
           name: output-log-file
-          path: output.log
+          path: output.log1
           
   example-job2:
     needs: [example-job1]
@@ -25,9 +25,21 @@ jobs:
     steps:
       - shell: bash
         run: |
-          expr 4 + 6 > output.log
+          expr 4 + 6 > output.log2
       - name: Upload output file
         uses: actions/upload-artifact@v3
         with:
           name: output-log-file
-          path: output.log
+          path: output.log2
+  download-example-job:
+    steps:
+      - name: Download a single artifact1
+        uses: actions/download-artifact@v3
+        with:
+          name: output-log-file1
+  example-job:
+    steps:
+      - name: Download a single artifact2
+        uses: actions/download-artifact@v3
+        with:
+          name: output-log-file2          

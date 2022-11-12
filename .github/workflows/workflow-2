@@ -31,13 +31,15 @@ jobs:
         with:
           name: output-log-file
           path: output.log2
-  download-example-job:
+          
+  download-example-job1:
     steps:
       - name: Download a single artifact1
         uses: actions/download-artifact@v3
         with:
           name: output-log-file1
-  example-job:
+          
+  download-example-job2:
     steps:
       - name: Download a single artifact2
         uses: actions/download-artifact@v3
